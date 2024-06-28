@@ -9,41 +9,38 @@ from pynput.mouse import Button, Controller
 mouse = Controller()
 time.sleep(0.5)
 
-
-
-print(f"Name:  HoDuyHoang - Hudson Ho Glife")
+print(f"Name: HoDuyHoang - Hudson Ho Glife")
 
 print("1. English")
-print("2. Tieng Viet")
+print("2. Tiếng Việt")
 
 while True:
     try:
-        language_choice = int(input("Chon ngon ngu di em: "))
+        language_choice = int(input("Chọn ngôn ngữ: "))
         if language_choice in [1, 2]:
             break
         else:
-            print("May co the chon 1 hoac 2! OK.")
+            print("Bạn chỉ có thể chọn 1 hoặc 2.")
     except ValueError:
-        print("Loi roi thang ml")
+        print("Lỗi! Vui lòng nhập lại.")
 
 if language_choice == 1:
     window_input = "\nEnter window name (1 - TelegramDesktop): "
     window_not_found = "[❌] | Window - {} not found!"
     window_found = "[✅] | Window found - {}\nPress 'q' to pause."
-    pause_message = "Pause\nPress 'q' again to continue"
+    pause_message = "Pause\nPress 'q' again to continue."
     continue_message = "Continue working."
 elif language_choice == 2:
-    window_input = "\nMo phan mem (1 - TelegramDesktop): "
-    window_not_found = "[❌] | Phan mem - {} nay deo tim thay!"
-    window_found = "[✅] | Da tim thay phan mem - {}\nNhan 'q' de tam dung."
-    pause_message = "Tam dung \nNhan nut 'q' lan nua de tiep tuc"
-    continue_message = 'Dang tiep tuc...'
+    window_input = "\nNhập tên cửa sổ (1 - TelegramDesktop): "
+    window_not_found = "[❌] | Không tìm thấy cửa sổ - {}!"
+    window_found = "[✅] | Đã tìm thấy cửa sổ - {}\nNhấn 'q' để tạm dừng."
+    pause_message = "Tạm dừng\nNhấn 'q' để tiếp tục."
+    continue_message = "Tiếp tục làm việc."
 
 def click(x, y):
     mouse.position = (x, y + random.randint(1, 3))
     mouse.press(Button.left)
     mouse.release(Button.left)
-
 
 window_name = input(window_input)
 
@@ -52,8 +49,6 @@ if window_name == '1':
 
 if window_name == '2':
     window_name = "KotatogramDesktop"
-
-
 
 check = gw.getWindowsWithTitle(window_name)
 if not check:
