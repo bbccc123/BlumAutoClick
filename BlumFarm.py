@@ -18,7 +18,7 @@ print("2. Tieng Viet")
 
 while True:
     try:
-        language_choice = int(input("May chi can ngoi choi: "))
+        language_choice = int(input("Chon ngon ngu di em: "))
         if language_choice in [1, 2]:
             break
         else:
